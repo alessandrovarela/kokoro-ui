@@ -1,4 +1,5 @@
-FROM python:3.12-slim
+FROM python:3.12
+ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /app
 
@@ -8,8 +9,10 @@ COPY ./packages.txt /app/packages.txt
 
 # Install system packages including espeak-ng for TTS
 RUN apt-get update && \
-    apt-get -qq -y install espeak-ng > /dev/null 2>&1 && \
-    xargs -r -a /app/packages.txt apt-get install -y && \
+    apt-get install -y --no-install-recommends espeak-ng curl && \
+    if [ -s /app/packages.txt ]; then \
+      xargs -r -a /app/packages.txt apt-get install -y --no-install-recommends; \
+    fi && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Python packages
@@ -33,7 +36,7 @@ COPY --chown=user . $HOME/app
 EXPOSE 8501
 
 # Health check
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=5 CMD curl -fsS http://localhost:8501/_stcore/health || exit 1
 
 # Run Streamlit
 CMD streamlit run app.py \
