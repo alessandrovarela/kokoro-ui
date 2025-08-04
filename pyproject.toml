@@ -1,0 +1,15 @@
+[project]
+name = "kokoro-ui"
+version = "0.1.0"
+description = "Streamlit UI for Kokoro TTS - Text to Speech Generator"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "streamlit>=1.28.0",
+    "kokoro>=0.9.4",
+    "soundfile>=0.13.1",
+    "numpy>=1.24.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
