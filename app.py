@@ -153,7 +153,13 @@ def generate_audio(text, lang_code, voice, speed):
             temp_dir = Path(tempfile.gettempdir()) / "kokoro_ui" / st.session_state.session_id
             temp_dir.mkdir(parents=True, exist_ok=True)
             
-            filename = f"voice_{voice}_{int(speed*100)}.wav"
+            # Create filename: first 15 chars + voice + timestamp
+            import datetime
+            text_prefix = text[:15].replace(" ", "_").replace("\n", "_")
+            # Remove special characters that might cause issues
+            text_prefix = "".join(c for c in text_prefix if c.isalnum() or c in "_-")
+            timestamp = datetime.datetime.now().strftime("%y%m%d%H%M%S")
+            filename = f"{text_prefix}_{voice}_{timestamp}.wav"
             output_path = temp_dir / filename
             
             # Save audio file
@@ -264,19 +270,20 @@ with col2:
         # File info and download
         st.subheader("📁 File Download")
         
-        col_info, col_download = st.columns([1, 1])
+        #col_info, col_download = st.columns([1, 1])
         
-        with col_info:
-            st.info(f"**Filename:** {st.session_state.generated_filename}")
+        #with col_info:
+        st.info(f"**Filename:** {st.session_state.generated_filename}")
             
-        with col_download:
-            st.download_button(
-                label="⬇️ Download WAV",
-                data=audio_bytes,
-                file_name=st.session_state.generated_filename,
-                mime="audio/wav",
-                use_container_width=True
-            )
+        #with col_download:
+        st.download_button(
+            label="Download WAV",
+            data=audio_bytes,
+            file_name=st.session_state.generated_filename,
+            mime="audio/wav",
+            icon=":material/download:",
+            use_container_width=True
+        )
     else:
         st.info("Click 'Generate' to create audio")
 
