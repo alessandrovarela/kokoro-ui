@@ -196,7 +196,7 @@ with col1:
         "Input Text",
         max_chars=500,
         height=150,
-        help="Up to 500 characters per Generate.",
+        help="Up to 500 characters per generation.",
         placeholder="Enter your text here..."
     )
     

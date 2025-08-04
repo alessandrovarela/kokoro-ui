@@ -12,74 +12,74 @@ license: mit
 
 # 🎤 Kokoro TTS Generator
 
-Uma interface web elegante para síntese de voz usando o sistema Kokoro AI, construída com Streamlit.
+An elegant web interface for voice synthesis using the Kokoro AI system, built with Streamlit.
 
-## ✨ Características
+## ✨ Features
 
-- **Interface em duas colunas** otimizada para desktop e mobile
-- **Suporte a 9 idiomas**: Inglês (US/UK), Japonês, Chinês Mandarim, Espanhol, Francês, Hindi, Italiano, Português Brasileiro
-- **Múltiplas vozes** masculinas e femininas para cada idioma
-- **Controle de velocidade** ajustável (0.1x a 2.0x)
-- **Player de áudio integrado** para reprodução imediata
-- **Download direto** dos arquivos WAV gerados
-- **Gerenciamento inteligente de sessões** para múltiplos usuários
-- **Nomes de arquivo personalizados** com timestamp
+- **Two-column interface** optimized for desktop and mobile
+- **Support for 9 languages**: English (US/UK), Japanese, Mandarin Chinese, Spanish, French, Hindi, Italian, Brazilian Portuguese
+- **Multiple voices** male and female for each language
+- **Adjustable speed control** (0.1x to 2.0x)
+- **Integrated audio player** for immediate playback
+- **Direct download** of generated WAV files
+- **Intelligent session management** for multiple users
+- **Custom filenames** with timestamp
 
-## 🎯 Como usar
+## 🎯 How to use
 
-1. **Digite seu texto** (até 500 caracteres)
-2. **Selecione o idioma** desejado
-3. **Escolha uma voz** disponível para o idioma
-4. **Ajuste a velocidade** se necessário
-5. **Clique em Generate** para criar o áudio
-6. **Reproduza** o áudio gerado e **faça o download** se desejar
+1. **Type your text** (up to 500 characters)
+2. **Select the desired language**
+3. **Choose an available voice** for the language
+4. **Adjust speed** if needed
+5. **Click Generate** to create audio
+6. **Play** the generated audio and **download** if desired
 
-## 🔧 Tecnologias
+## 🔧 Technologies
 
-- **Streamlit** - Interface web
-- **Kokoro TTS** - Sistema de síntese de voz
-- **PyTorch** - Backend de machine learning
-- **NumPy** - Processamento de áudio
-- **SoundFile** - Manipulação de arquivos de áudio
+- **Streamlit** - Web interface
+- **Kokoro TTS** - Voice synthesis system
+- **PyTorch** - Machine learning backend
+- **NumPy** - Audio processing
+- **SoundFile** - Audio file manipulation
 
-## 📝 Licença
+## 📝 License
 
-MIT License - veja o arquivo LICENSE para detalhes.
+MIT License - see LICENSE file for details.
 
 ---
 
 Powered by [Kokoro TTS](https://github.com/hexgrad/kokoro)
    ```
 
-2. **Acessar a interface:**
-   - Abra seu navegador em `http://localhost:8501`
+2. **Access the interface:**
+   - Open your browser at `http://localhost:8501`
 
 
-## 🌍 Idiomas e Vozes Suportados
+## 🌍 Supported Languages and Voices
 
-- **🇺🇸 Inglês Americano**: 11 vozes femininas, 9 masculinas
-- **🇬🇧 Inglês Britânico**: 4 vozes femininas, 4 masculinas  
-- **🇯🇵 Japonês**: 4 vozes femininas, 1 masculina
-- **🇨🇳 Chinês Mandarim**: 4 vozes femininas, 4 masculinas
-- **🇪🇸 Espanhol**: 1 voz feminina, 2 masculinas
-- **🇫🇷 Francês**: 1 voz feminina
-- **🇮🇳 Hindi**: 2 vozes femininas, 2 masculinas
-- **🇮🇹 Italiano**: 1 voz feminina, 1 masculina
-- **🇧🇷 Português Brasileiro**: 1 voz feminina, 2 masculinas
-
-
-## 🔧 Configuração
-
-A aplicação usa as seguintes configurações padrão:
-- **Porta**: 8501
-- **Qualidade de áudio**: 24kHz WAV
-- **Limite de caracteres**: 500 por geração
+- **🇺🇸 American English**: 11 female voices, 9 male voices
+- **🇬🇧 British English**: 4 female voices, 4 male voices  
+- **🇯🇵 Japanese**: 4 female voices, 1 male voice
+- **🇨🇳 Mandarin Chinese**: 4 female voices, 4 male voices
+- **🇪🇸 Spanish**: 1 female voice, 2 male voices
+- **🇫🇷 French**: 1 female voice
+- **🇮🇳 Hindi**: 2 female voices, 2 male voices
+- **🇮🇹 Italian**: 1 female voice, 1 male voice
+- **🇧🇷 Brazilian Portuguese**: 1 female voice, 2 male voices
 
 
-## 🤝 Baseado em
+## 🔧 Configuration
 
-Este projeto é baseado no [kokoro-sample](https://github.com/alessandrovarela/kokoro-sample) e utiliza o sistema [Kokoro TTS](https://github.com/hexgrad/kokoro) para síntese de voz.
+The application uses the following default settings:
+- **Port**: 8501
+- **Audio quality**: 24kHz WAV
+- **Character limit**: 500 per generation
 
-## 📄 Licença
 
-Este projeto segue a mesma licença do projeto Kokoro original.
+## 🤝 Based on
+
+This project is based on [kokoro-sample](https://github.com/alessandrovarela/kokoro-sample) and uses the [Kokoro TTS](https://github.com/hexgrad/kokoro) system for voice synthesis.
+
+## 📄 License
+
+This project follows the same license as the original Kokoro project.

@@ -1,91 +1,91 @@
-# 🚀 Como executar a aplicação Kokoro TTS UI
+# 🚀 How to run the Kokoro TTS UI application
 
-## Pré-requisitos
-- Python 3.12 (configurado automaticamente pelo UV)
-- UV (gerenciador de dependências)
-- Conexão com internet (para download dos modelos na primeira execução)
+## Prerequisites
+- Python 3.12 (automatically configured by UV)
+- UV (dependency manager)
+- Internet connection (for model download on first run)
 
-## Dependências instaladas
-✅ Todas as dependências foram instaladas com sucesso:
+## Installed dependencies
+✅ All dependencies were successfully installed:
 - streamlit==1.47.1
 - kokoro==0.9.4
 - soundfile==0.13.1
 - numpy==2.3.2
-- + 100+ dependências auxiliares
+- + 100+ auxiliary dependencies
 
-## Como executar
+## How to run
 
-### Execute a aplicação
+### Run the application
 ```bash
 uv run streamlit run app.py --server.runOnSave true
 ```
 
-**OU** (se o ambiente virtual estiver ativo):
+**OR** (if virtual environment is active):
 ```bash
 python -m streamlit run app.py --server.runOnSave true
 ```
 
-**OU** usando o script de execução:
+**OR** using the run script:
 ```bash
 uv run python run.py
 ```
 
-### Acesse a aplicação
-- Abra seu navegador em: http://localhost:8501
-- A aplicação será carregada automaticamente
+### Access the application
+- Open your browser at: http://localhost:8501
+- The application will load automatically
 
-## Problemas comuns
+## Common issues
 
 ### 1. "ModuleNotFoundError: No module named 'streamlit'"
-**Solução:** Use sempre `uv run` antes dos comandos:
+**Solution:** Always use `uv run` before commands:
 ```bash
 uv run streamlit run app.py
 ```
 
-### 2. Reinstalar dependências (se necessário)
+### 2. Reinstall dependencies (if needed)
 ```bash
 uv sync
 ```
 
-## Funcionalidades da aplicação
+## Application features
 
-### Coluna Esquerda (Configurações):
-- **Input Text**: Campo de texto para inserir até 500 caracteres
-- **Language**: Seletor de idioma (padrão: Português Brasileiro)
-- **Voice**: Seletor de voz (filtrado por idioma selecionado)
-- **Speed**: Slider para ajustar velocidade (0.1 a 2.0)
-- **Generate**: Botão para gerar o áudio
+### Left Column (Settings):
+- **Input Text**: Text field for inserting up to 500 characters
+- **Language**: Language selector (default: Brazilian Portuguese)
+- **Voice**: Voice selector (filtered by selected language)
+- **Speed**: Slider to adjust speed (0.1 to 2.0)
+- **Generate**: Button to generate audio
 
-### Coluna Direita (Áudio Gerado):
-- **Audio Player**: Player para reproduzir o áudio gerado
-- **File Download**: Informações e botão de download do arquivo WAV
+### Right Column (Generated Audio):
+- **Audio Player**: Player to play the generated audio
+- **File Download**: Information and download button for WAV file
 
-## Vozes disponíveis por idioma
+## Available voices by language
 
-- 🇺🇸 **Inglês Americano**: 20 vozes (11F, 9M)
-- 🇬🇧 **Inglês Britânico**: 8 vozes (4F, 4M)  
-- 🇯🇵 **Japonês**: 5 vozes (4F, 1M)
-- 🇨🇳 **Chinês Mandarim**: 8 vozes (4F, 4M)
-- 🇪🇸 **Espanhol**: 3 vozes (1F, 2M)
-- 🇫🇷 **Francês**: 1 voz (1F)
-- 🇮🇳 **Hindi**: 4 vozes (2F, 2M)
-- 🇮🇹 **Italiano**: 2 vozes (1F, 1M)
-- 🇧🇷 **Português Brasileiro**: 3 vozes (1F, 2M)
+- 🇺🇸 **American English**: 20 voices (11F, 9M)
+- 🇬🇧 **British English**: 8 voices (4F, 4M)  
+- 🇯🇵 **Japanese**: 5 voices (4F, 1M)
+- 🇨🇳 **Mandarin Chinese**: 8 voices (4F, 4M)
+- 🇪🇸 **Spanish**: 3 voices (1F, 2M)
+- 🇫🇷 **French**: 1 voice (1F)
+- 🇮🇳 **Hindi**: 4 voices (2F, 2M)
+- 🇮🇹 **Italian**: 2 voices (1F, 1M)
+- 🇧🇷 **Brazilian Portuguese**: 3 voices (1F, 2M)
   - pf_dora (🚺)
   - pm_alex (🚹)
   - pm_santa (🚹)
 
-## Gerenciamento de sessões
-- Cada usuário recebe uma sessão única
-- Arquivos de áudio anteriores são automaticamente removidos
-- Limpeza automática de arquivos temporários
+## Session management
+- Each user receives a unique session
+- Previous audio files are automatically removed
+- Automatic cleanup of temporary files
 
-## Arquivos do projeto
-- `app.py` - Aplicação principal Streamlit
-- `pyproject.toml` - Configuração e dependências
-- `uv.lock` - Lock file das dependências
-- `README.md` - Documentação
-- `voices.md` - Documentação das vozes
+## Project files
+- `app.py` - Main Streamlit application
+- `pyproject.toml` - Configuration and dependencies
+- `uv.lock` - Dependencies lock file
+- `README.md` - Documentation
+- `voices.md` - Voice documentation
 
 ---
-🎤 **Aplicação criada com sucesso!** Pronta para converter texto em fala usando Kokoro TTS.
+🎤 **Application created successfully!** Ready to convert text to speech using Kokoro TTS.
