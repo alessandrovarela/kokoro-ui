@@ -18,17 +18,9 @@ Elegant web interface for voice synthesis using the **Kokoro** model, built with
 - **Session management** for concurrent users
 - **Custom filenames** with timestamp
 
-## 🚀 Deploy on Hugging Face Spaces (Docker)
-1. Crie um Space do tipo **Docker**.
-2. Este README já declara `sdk: docker` e `app_port: 8501` no front‑matter.
-3. O container expõe e escuta em **0.0.0.0:8501** (veja `Dockerfile`).
-4. Configure **Settings → Secrets/Variables** no Space se precisar de tokens/segredos.
+## 🚀 Demo on Hugging Face Spaces
+https://huggingface.co/spaces/alessandrovarela/kokoro-ui
 
-### Docker configuration (summary)
-- **Base image**: Python 3.12‑slim
-- **Port**: 8501
-- **System packages**: `espeak-ng`, `libsndfile1`, `ffmpeg`, `curl` (para healthcheck)
-- **User**: non‑root (UID 1000)
 
 ## 🧪 Run locally
 **Using UV (recommended)**
