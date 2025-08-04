@@ -1,5 +1,11 @@
 ---
 title: Kokoro TTS UI
+sdk: docker
+app_port: 8501
+license: mit
+---
+
+title: Kokoro TTS UI
 emoji: 🎤
 ## 🔧 Technologies
 
@@ -34,15 +40,6 @@ docker run -p 8501:8501 kokoro-tts-ui
 
 MIT License - see LICENSE file for details.
 
----
-
-Powered by [Kokoro TTS](https://github.com/hexgrad/kokoro)
-colorTo: purple
-sdk: docker
-app_port: 8501
-pinned: false
-license: mit
----
 
 # 🎤 Kokoro TTS Generator
 
