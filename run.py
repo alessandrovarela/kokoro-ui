@@ -27,7 +27,8 @@ def main():
             str(app_path),
             "--server.headless", "true",
             "--server.port", "8501",
-            "--browser.gatherUsageStats", "false"
+            "--browser.gatherUsageStats", "false",
+            "--server.runOnSave", "true"
         ])
     except KeyboardInterrupt:
         print("\n👋 Aplicação finalizada!")

@@ -17,12 +17,17 @@
 
 ### Execute a aplicação
 ```bash
-uv run streamlit run app.py
+uv run streamlit run app.py --server.runOnSave true
 ```
 
 **OU** (se o ambiente virtual estiver ativo):
 ```bash
-python -m streamlit run app.py
+python -m streamlit run app.py --server.runOnSave true
+```
+
+**OU** usando o script de execução:
+```bash
+uv run python run.py
 ```
 
 ### Acesse a aplicação

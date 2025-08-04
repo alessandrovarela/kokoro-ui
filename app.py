@@ -227,26 +227,30 @@ with col1:
     generate_btn = st.button(
         "🎵 Generate",
         type="primary",
-        disabled=not text_input or not selected_voice,
         use_container_width=True
     )
 
 with col2:
     st.header("Generated Audio")
     
-    if generate_btn and text_input and selected_voice:
-        with st.spinner("Generating audio..."):
-            success, audio_path, filename = generate_audio(
-                text_input, 
-                selected_lang_code, 
-                selected_voice, 
-                speed
-            )
-        
-        if success:
-            st.success("Audio generated successfully!")
+    if generate_btn:
+        if not text_input:
+            st.error("Please enter some text to generate audio.")
+        elif not selected_voice:
+            st.error("Please select a voice.")
         else:
-            st.error(f"Error generating audio: {audio_path}")
+            with st.spinner("Generating audio..."):
+                success, audio_path, filename = generate_audio(
+                    text_input, 
+                    selected_lang_code, 
+                    selected_voice, 
+                    speed
+                )
+            
+            if success:
+                st.success("Audio generated successfully!")
+            else:
+                st.error(f"Error generating audio: {audio_path}")
     
     # Display audio player and download if audio exists
     if st.session_state.generated_audio_path and os.path.exists(st.session_state.generated_audio_path):
