@@ -130,14 +130,19 @@ def cleanup_previous_audio():
     st.session_state.generated_audio_path = None
     st.session_state.generated_filename = None
 
+@st.cache_resource
+def load_pipeline(lang_code):
+    """Load Kokoro pipeline with caching for better performance"""
+    return KPipeline(lang_code=lang_code, repo_id='hexgrad/Kokoro-82M')
+
 def generate_audio(text, lang_code, voice, speed):
     """Generate audio using Kokoro pipeline"""
     try:
         # Clean up previous audio
         cleanup_previous_audio()
         
-        # Create pipeline with explicit repo_id to suppress warning
-        pipeline = KPipeline(lang_code=lang_code, repo_id='hexgrad/Kokoro-82M')
+        # Create pipeline with caching
+        pipeline = load_pipeline(lang_code)
         
         # Generate audio
         generator = pipeline(text=text, voice=voice, speed=speed)

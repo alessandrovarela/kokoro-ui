@@ -1,33 +1,54 @@
-# 🎤 Kokoro TTS UI
+---
+title: Kokoro TTS UI
+emoji: 🎤
+colorFrom: blue
+colorTo: purple
+sdk: streamlit
+sdk_version: 1.47.1
+app_file: app.py
+pinned: false
+license: mit
+---
 
-Uma interface web simples e elegante para o sistema de síntese de voz Kokoro, construída com Streamlit.
+# 🎤 Kokoro TTS Generator
+
+Uma interface web elegante para síntese de voz usando o sistema Kokoro AI, construída com Streamlit.
 
 ## ✨ Características
 
-- **Interface em duas colunas** para uma experiência otimizada
-- **Suporte a múltiplos idiomas**
-- **Múltiplas vozes** para cada idioma (masculinas e femininas)
+- **Interface em duas colunas** otimizada para desktop e mobile
+- **Suporte a 9 idiomas**: Inglês (US/UK), Japonês, Chinês Mandarim, Espanhol, Francês, Hindi, Italiano, Português Brasileiro
+- **Múltiplas vozes** masculinas e femininas para cada idioma
 - **Controle de velocidade** ajustável (0.1x a 2.0x)
 - **Player de áudio integrado** para reprodução imediata
 - **Download direto** dos arquivos WAV gerados
-- **Gerenciamento de sessões** para múltiplos usuários
-
-## 🚀 Instalação
-
-### Pré-requisitos
-- Python 3.12 ou superior
-- UV (gerenciador de dependências)
-
-### Instalação das dependências
-```bash
-uv sync
-```
+- **Gerenciamento inteligente de sessões** para múltiplos usuários
+- **Nomes de arquivo personalizados** com timestamp
 
 ## 🎯 Como usar
 
-1. **Iniciar a aplicação:**
-   ```bash
-   uv run streamlit run app.py
+1. **Digite seu texto** (até 500 caracteres)
+2. **Selecione o idioma** desejado
+3. **Escolha uma voz** disponível para o idioma
+4. **Ajuste a velocidade** se necessário
+5. **Clique em Generate** para criar o áudio
+6. **Reproduza** o áudio gerado e **faça o download** se desejar
+
+## 🔧 Tecnologias
+
+- **Streamlit** - Interface web
+- **Kokoro TTS** - Sistema de síntese de voz
+- **PyTorch** - Backend de machine learning
+- **NumPy** - Processamento de áudio
+- **SoundFile** - Manipulação de arquivos de áudio
+
+## 📝 Licença
+
+MIT License - veja o arquivo LICENSE para detalhes.
+
+---
+
+Powered by [Kokoro TTS](https://github.com/hexgrad/kokoro)
    ```
 
 2. **Acessar a interface:**
