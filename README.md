@@ -1,11 +1,45 @@
 ---
 title: Kokoro TTS UI
 emoji: 🎤
-colorFrom: blue
+## 🔧 Technologies
+
+- **Streamlit** - Web interface
+- **Kokoro TTS** - Voice synthesis system
+- **PyTorch** - Machine learning backend
+- **NumPy** - Audio processing
+- **SoundFile** - Audio file manipulation
+- **Docker** - Containerization for deployment
+
+## 🚀 Deployment
+
+This application is designed to run on **Hugging Face Spaces** using Docker.
+
+### Docker Configuration:
+- **Base Image**: Python 3.12-slim
+- **Port**: 8501
+- **System Dependencies**: espeak-ng, ffmpeg, libsndfile1
+- **User**: Non-root user (UID 1000)
+
+### Local Development:
+```bash
+# Using UV (recommended)
+uv run streamlit run app.py
+
+# Using Docker
+docker build -t kokoro-tts-ui .
+docker run -p 8501:8501 kokoro-tts-ui
+```
+
+## 📝 License
+
+MIT License - see LICENSE file for details.
+
+---
+
+Powered by [Kokoro TTS](https://github.com/hexgrad/kokoro)
 colorTo: purple
-sdk: streamlit
-sdk_version: 1.47.1
-app_file: app.py
+sdk: docker
+app_port: 8501
 pinned: false
 license: mit
 ---
